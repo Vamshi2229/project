@@ -48,6 +48,8 @@
   <profiles>
         <profile>
             <id>sonar</id>
+            <username>admin</username>
+            <password>123</password>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
