@@ -15,7 +15,7 @@ pipeline {
         stage('SonarScanning') {
             steps {
                 withSonarQubeEnv('sonar') {
-                    bat 'mvn clean verify sonar:sonar -Dsonar.login=sqp_31ff1edf888fcbb666ebe99075ad7ec47a5b95d6'
+                    bat 'mvn clean verify sonar:sonar -Dsonar.login=sqa_b4753105f28eea15db058f4531e21069a435c4c0'
                 }
             }
         }
