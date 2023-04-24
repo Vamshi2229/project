@@ -25,14 +25,8 @@ pipeline {
                  script {
                 // Deploy the .war file to Tomcat using the Tomcat Manager
                      bat 'xcopy "target\\*.war" "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps\\" /Y'
-                }
                  }
              }
-        stage('SonarQube analysis') {
-            withSonarQubeEnv(cedentialsId: 'sqp_347eeea2358aeddf3f527967fffdd6127aad07ea', installationName:'My SonarQube Server') {
-                // you can override the credential to be used
-                sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
-            }
         }
     }
 }
