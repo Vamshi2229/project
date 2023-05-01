@@ -1,4 +1,7 @@
-From openjdk:7
-ADD target/my-maven-docker-project.jar my-maven-docker-project.jar
-ENTRYPOINT ["java", "-jar", "my-maven-docker-project.jar"]
-expose 8080
+FROM ubuntu:latest
+RUN apt-get update
+RUN apt-get update && apt-get install -y git
+RUN apt-get update && apt-get install -y openjdk-17-jdk
+RUN apt-get update && apt-get install -y maven
+RUN apt-get update && apt-get install -y tomcat9
+CMD git --version
